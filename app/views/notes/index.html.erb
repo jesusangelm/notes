@@ -1,0 +1,24 @@
+<h1>Mis notas</h1>
+
+
+<section>
+  <div>
+    <h1>Lista de Snippets</h1>
+    <p>
+    <%= link_to "Nuevo", new_note_path %>
+    </p>
+
+    <div>
+      <% @notes.each do |nota| %>
+        <p>
+      <strong>Titulo: </strong> <%= nota.title.capitalize %><br />
+      <strong>Contenido: </strong> <%= nota.body %>
+    <span><%= link_to "Mostrar", nota %> |
+        <%= link_to "Eliminar", nota, method: :delete,
+        data: { confirm: "Seguro?" } %>
+    </span>
+      </p>
+    <% end %>
+    </div>
+  </div>
+</section>
