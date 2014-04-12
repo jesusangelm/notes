@@ -1,0 +1,20 @@
+<section>
+<h1>Nota</h1>
+
+<p>
+<%= link_to "Eliminar", @note, method: :delete,
+        data: { confirm: "Seguro?" } %> |
+<%= link_to "Inicio", root_path %>
+</p>
+
+<p>
+<strong>Titulo:</strong>
+<%= @note.title.capitalize %>
+</p>
+
+<p>
+<strong>Contenido:</strong>
+<%= @note.body %>
+</p>
+
+</section>
