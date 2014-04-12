@@ -1,20 +1,22 @@
 <section>
-<h1>Nota</h1>
-
-<p>
-<%= link_to "Eliminar", @note, method: :delete,
-        data: { confirm: "Seguro?" } %> |
-<%= link_to "Inicio", root_path %>
-</p>
-
-<p>
-<strong>Titulo:</strong>
-<%= @note.title.capitalize %>
-</p>
-
-<p>
-<strong>Contenido:</strong>
-<%= @note.body %>
-</p>
-
-</section>
+  <h1>Nota</h1>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="well">
+        <p>
+        <strong>Titulo:</strong>
+        <%= @note.title.capitalize %>
+        </p>
+        <p>
+        <strong>Contenido:</strong>
+        <%= @note.body %>
+        </p>
+        <p>
+        <%= link_to "Eliminar", @note, method: :delete,
+          data: { confirm: "Seguro?" } %> |
+          <%= link_to "Inicio", root_path %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
