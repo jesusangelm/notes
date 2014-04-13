@@ -15,6 +15,16 @@
         <li><a href="http://jam.net.ve">Web</a></li>
         <li><a href="http://jam.net.ve/cv">CV</a></li>
       </ul>
+      <ul class="nav navbar-nav pull-right">
+        <% if user_signed_in? %>
+          <li><%= link_to "Perfil", edit_user_registration_path %></li>
+          <li><%= link_to "Salir", destroy_user_session_path,
+                                   method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Registrarse", new_user_registration_path %></li>
+          <li><%= link_to "Entrar", new_user_session_path %></li>
+        <% end %>
+      </ul>
     </div><!--/.nav-collapse -->
   </div>
 </div>

@@ -14,6 +14,8 @@ gem 'jbuilder', '~> 1.2'
 gem "better_errors", "1.1.0"
 gem "quiet_assets", "1.0.2"
 
+gem "devise", "3.2.4"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

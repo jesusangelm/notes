@@ -1,5 +1,6 @@
 Notepad::Application.routes.draw do
 
+  devise_for :users
   resources :notes
   root "notes#index"
 
