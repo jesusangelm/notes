@@ -1,4 +1,5 @@
-<%= form_for :note, url: notes_path do |f| %>
+<%= form_for :note, url: notes_path,
+                    html: { class: "form-horizontal", role: "form" } do |f| %>
   <% if @note.errors.any? %>
   <div id="error_explanation">
   <h2><%= pluralize(@note.errors.count, "error") %> prohibited
@@ -10,18 +11,22 @@
   </ul>
 </div>
   <% end %>
+
+<div class="form-group">
 <p>
-<%= f.label :title %><br>
-<%= f.text_field :title %>
+<%= f.text_field :title, class: "form-control",
+                         placeholder: "Titulo" %>
 </p>
 
 <p>
-<%= f.label :body %><br>
-<%= f.text_area :body %>
+<%= f.text_area :body, size: "60x12",
+                       class: "form-control",
+                       placeholder: "Contenido" %>
 </p>
 
 <p>
-<%= f.submit %>
+<%= f.submit "Guardar", class: "btn btn-primary" %>
 </p>
+</div>
 <% end %>
 
