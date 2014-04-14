@@ -1,0 +1,11 @@
+<div class="jumbotron">
+  <h1>Bienvenido a Notas.</h1>
+  <p>Fragmentos de texto que solo tienen significado para ti.</p>
+  <% if user_signed_in? %>
+    <p><%= link_to "Ir a mis notas...", notes_path,
+                    class: "btn btn-success btn-lg" %> </p>
+  <% else %>
+    <p><%= link_to "Registrate!", new_user_registration_path,
+                    class: "btn btn-primary btn-lg" %></p>
+  <% end %>
+</div>

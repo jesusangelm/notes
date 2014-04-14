@@ -1,10 +1,10 @@
 class NotesController < ApplicationController
   
-  before_filter :authenticate_user!, except: [:index]
+  before_filter :authenticate_user!
 
   def index
-    @notes = Note.all
-    #@notes = current_user.notes
+    #@notes = Note.all
+    @notes = current_user.notes
   end
 
   def new
@@ -17,7 +17,7 @@ class NotesController < ApplicationController
     @note = current_user.notes.new(note_params)
 
     if @note.save
-      redirect_to root_path, notice: "Nota Guardada!"
+      redirect_to notes_path, notice: "Nota Guardada!"
     else
       render :new
     end
@@ -32,7 +32,7 @@ class NotesController < ApplicationController
     @note = current_user.notes.find(params[:id])
     @note.destroy
 
-    redirect_to root_path, notice: "Nota Eliminada!"
+    redirect_to notes_path, notice: "Nota Eliminada!"
   end
 
   private
