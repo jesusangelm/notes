@@ -4,7 +4,7 @@ class NotesController < ApplicationController
 
   def index
     #@notes = Note.all
-    @notes = current_user.notes
+    @notes = current_user.notes.order("created_at DESC")
   end
 
   def new
