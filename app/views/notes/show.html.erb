@@ -7,10 +7,7 @@
         <strong>Titulo:</strong>
         <%= @note.title.capitalize %>
         </p>
-        <p>
-        <strong>Contenido:</strong>
-        <%= @note.body %>
-        </p>
+        <%= to_markdown(@note.body) %>
         <p>
         <%= link_to "Eliminar", @note, method: :delete,
           data: { confirm: "Seguro?" } %> |
