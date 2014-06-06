@@ -1,33 +1,20 @@
-<div class="col-md-8">
-<%= form_for :note, url: notes_path,
-                    html: { class: "form-horizontal", role: "form" } do |f| %>
-  <% if @note.errors.any? %>
-  <div id="error_explanation">
-  <h2><%= pluralize(@note.errors.count, "error") %> prohibited
-    this note from being saved:</h2>
-  <ul>
-    <% @note.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+  <%= form_for :note, url: notes_path,
+                     html: { class: "form-horizontal", role: "form" } do |f| %>
+
+    <div class="form-group">
+      <p>
+        <%= f.text_field :title, class: "form-control",
+                                 placeholder: "Titulo" %>
+      </p>
+
+      <p>
+        <%= f.text_area :body, size: "60x5",
+                              class: "form-control",
+                        placeholder: "Contenido: Markdown es bienvenido!!!" %>
+      </p>
+
+      <p>
+        <%= f.submit "Guardar", class: "btn btn-primary" %>
+      </p>
+    </div>
   <% end %>
-  </ul>
-</div>
-  <% end %>
-
-<div class="form-group">
-<p>
-<%= f.text_field :title, class: "form-control",
-                         placeholder: "Titulo" %>
-</p>
-
-<p>
-<%= f.text_area :body, size: "60x12",
-                       class: "form-control",
-                       placeholder: "Contenido: Markdown es bienvenido!!!" %>
-</p>
-
-<p>
-<%= f.submit "Guardar", class: "btn btn-primary" %>
-</p>
-</div>
-<% end %>
-<div>

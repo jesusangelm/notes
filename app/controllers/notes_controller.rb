@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  
+
   before_filter :authenticate_user!
 
   def index
@@ -19,7 +19,8 @@ class NotesController < ApplicationController
     if @note.save
       redirect_to notes_path, notice: "Nota Guardada!"
     else
-      render :new
+      flash[:danger] = "No deje ningun campo vacio"
+      redirect_to notes_path
     end
   end
 
