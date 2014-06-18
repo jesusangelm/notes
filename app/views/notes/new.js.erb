@@ -1,0 +1,5 @@
+$("<%= escape_javascript render(file: "notes/_form.html.erb") %>")
+.appendTo("#new_note_form");
+
+$(".form-horizontal").hide().slideDown();
+$("#new_note_link").hide();
