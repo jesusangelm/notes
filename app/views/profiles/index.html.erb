@@ -1,0 +1,14 @@
+<h1>Mi Perfil</h1>
+
+<% unless @profile.nil? %>
+
+  <p>Nombre: <%= @profile.name %></p>
+  <p>Ubicacion: <%= @profile.location %></p>
+  <p>Web: <%= @profile.web %></p>
+  <p>Bio: <%= @profile.bio %></p>
+
+  <%= link_to "Editar", edit_profile_path(@profile) %>
+
+<% else %>
+  <%= link_to "Crear mi perfil", new_profile_path  %>
+<% end %>

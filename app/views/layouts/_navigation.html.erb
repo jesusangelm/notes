@@ -17,6 +17,7 @@
       </ul>
       <ul class="nav navbar-nav pull-right">
         <% if user_signed_in? %>
+          <li><%= link_to "Perfil", profiles_path %></li>
           <li><%= link_to current_user.email, edit_user_registration_path %></li>
           <li><%= link_to "Mis notas", notes_path %></li>
           <li><%= link_to "Salir", destroy_user_session_path,
