@@ -5,24 +5,11 @@
             new_note_path(@note, :format => :js),
             :remote => true,
             :id => "new_note_link",
-            class: "btn btn-primary btn-xs"%>
+            class: "btn btn-primary btn-xs active",
+            role: "button"%>
 
 <h1>Mis notas</h1>
+<div id="notes">
+  <%= render @notes %>
+</div>
 
-<table class="table table-striped table-bordered table-hover">
-  <tr>
-    <th>Titulo</th>
-    <th>Contenido</th>
-    <th colspan="2">Opciones</th>
-  </tr>
-
-    <% @notes.each do |note| %>
-      <tr>
-      <td><%= note.title %></td>
-      <td><%= to_markdown(note.body.truncate(150)) %></td>
-      <td><%= link_to 'Mostrar', note_path(note) %></td>
-      <td><%= link_to 'Eliminar', note, method: :delete,
-        data: { confirm: "Seguro?" } %></td>
-    </tr>
-  <% end %>
-</table>

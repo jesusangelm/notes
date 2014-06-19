@@ -1,0 +1,13 @@
+<%= div_for note do %>
+<div class="table-responsive">
+<table class="table table-hover ">
+  <tr>
+    <td><%= note.title %></td>
+    <td class="text-center" ><%= to_markdown(note.body.truncate(150)) %></td>
+    <td class="text-right" ><%= link_to 'Mostrar', note_path(note) %></br>
+        <%= link_to 'Eliminar', note, method: :delete,
+      data: { confirm: "Seguro?" } %></td>
+  </tr>
+</table>
+</div>
+<% end %>

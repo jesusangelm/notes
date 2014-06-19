@@ -1,6 +1,7 @@
 <h1>Crear nota nueva</h1>
   <%= form_for :note, url: notes_path,
-                     html: { class: "form-horizontal", role: "form" } do |f| %>
+                      html: { class: "form-horizontal", role: "form" },
+                      remote: true  do |f| %>
 
     <div class="form-group">
       <p>

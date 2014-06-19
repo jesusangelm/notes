@@ -17,10 +17,15 @@ class NotesController < ApplicationController
     @note = current_user.notes.new(note_params)
 
     if @note.save
-      redirect_to notes_path, notice: "Nota Guardada!"
+      respond_to do |format|
+        format.html { redirect_to @note, notice: "Nota Guardada!" }
+        format.js
+      end
     else
-      flash[:danger] = "No deje ningun campo vacio"
-      redirect_to notes_path
+      respond_to do |format|
+        format.html { redirect_to @note }
+        format.js { render "error_create.js.erb" }
+      end
     end
   end
 
