@@ -20,6 +20,8 @@ group :development do
   gem "better_errors", "1.1.0"
   gem "quiet_assets", "1.0.2"
   gem 'sqlite3'
+  gem 'pry-rails', '~> 0.3.2'
+  gem 'railroady', '~> 1.1.1'
 end
 
 group :production do
