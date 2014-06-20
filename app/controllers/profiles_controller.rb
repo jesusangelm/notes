@@ -15,7 +15,8 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to profiles_url, notice: "Tu perfil ha sido creado"
     else
-      render :new
+      flash.now[:danger] = "Hubo un error, revise y reintente"
+      render :new 
     end
   end
 
@@ -29,6 +30,7 @@ class ProfilesController < ApplicationController
     if @profile.update(profile_params)
       redirect_to profiles_url, notice: "Perfil Actualizado"
     else
+      flash.now[:danger] = "Hubo un error, revise y reintente"
       render :edit
     end
   end

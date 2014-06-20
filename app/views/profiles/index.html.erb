@@ -1,6 +1,6 @@
 <h1>Mi Perfil</h1>
 
-<% unless @profile.nil? %>
+<% unless empty_profile?(@profile) %>
 
   <p>Nombre: <%= @profile.name %></p>
   <p>Ubicacion: <%= @profile.location %></p>
@@ -10,5 +10,6 @@
   <%= link_to "Editar", edit_profile_path(@profile) %>
 
 <% else %>
-  <%= link_to "Crear mi perfil", new_profile_path  %>
+  <h4><%= show_name_or_email %> Todavia no tienes perfil</h4>
+  <%= link_to "Crear mi perfil", new_profile_path, class: "btn btn-primary"  %>
 <% end %>
