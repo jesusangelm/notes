@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   has_one :profile
   has_many :notes, :dependent => :destroy
+
+  has_many :oauth_applications, class_name: 'Doorkeeper::Application', as: :owner
 end

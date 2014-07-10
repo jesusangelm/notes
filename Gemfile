@@ -15,6 +15,8 @@ gem 'jbuilder', '~> 1.2'
 gem "devise", "3.2.4"
 gem 'high_voltage', '~> 2.1.0'
 gem 'kramdown', '~> 1.3.3'
+gem "doorkeeper", "0.7.4"
+gem "warden", "1.2.3"
 
 group :development do
   gem "better_errors", "1.1.0"

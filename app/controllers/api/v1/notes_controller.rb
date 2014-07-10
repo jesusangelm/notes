@@ -2,15 +2,17 @@ module Api
   module V1
     class NotesController < BaseController
 
+      doorkeeper_for :all
       before_action :set_note, only: [:show, :update, :destroy]
 
       def index
-        @notes = Note.all
+        #@notes = Note.all
+        @notes = current_resource_owner.notes
         render json: @notes, status: 200
       end
 
       def create
-        @note = Note.new(note_params)
+        @note = current_resource_owner.notes.new(note_params)
 
         if @note.save
           render nothing: true, status: 204
@@ -40,7 +42,7 @@ module Api
       private
 
       def set_note
-        @note = Note.find(params[:id])
+        @note = current_resource_owner.notes.find(params[:id])
       end
 
       def note_params
