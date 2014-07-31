@@ -17,6 +17,8 @@ gem 'high_voltage', '~> 2.1.0'
 gem 'kramdown', '~> 1.3.3'
 gem "doorkeeper", "0.7.4"
 gem "warden", "1.2.3"
+gem 'geocoder', '~> 1.2.3'
+gem 'gmaps4rails', '~> 2.1.2'
 
 group :development do
   gem "better_errors", "1.1.0"

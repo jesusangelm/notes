@@ -6,6 +6,10 @@
   <p>Ubicacion: <%= @profile.location %></p>
   <p>Web: <%= @profile.web %></p>
   <p>Bio: <%= @profile.bio %></p>
+  <p>Latitud: <%= @profile.latitude %></p>
+  <p>Longitud: <%= @profile.longitude %></p>
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@profile.latitude}%2C#{@profile.longitude}" %><br />
+
 
   <%= link_to "Editar", edit_profile_path(@profile) %>
 
