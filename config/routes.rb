@@ -1,5 +1,6 @@
 Notepad::Application.routes.draw do
 
+  get "map/index"
   use_doorkeeper
   devise_for :users
 

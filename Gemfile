@@ -19,6 +19,7 @@ gem "doorkeeper", "0.7.4"
 gem "warden", "1.2.3"
 gem 'geocoder', '~> 1.2.3'
 gem 'gmaps4rails', '~> 2.1.2'
+gem 'underscore-rails', '~> 1.6.0'
 
 group :development do
   gem "better_errors", "1.1.0"
